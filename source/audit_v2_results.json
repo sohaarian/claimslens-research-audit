@@ -1,0 +1,66 @@
+{
+  "as_of": "2026-10-17",
+  "case_CL_0038_scenario": "complete",
+  "cases": 240,
+  "complete_source_02_count": 15,
+  "corrected_verifier_label_agreement": 240,
+  "email_hits": {
+    "pattern_1": 0,
+    "pattern_2": 0,
+    "pattern_3": 0
+  },
+  "email_patterns": [
+    "final.{0,50}report.{0,50}(?:received|obtained|available|signed|uploaded)",
+    "(?:received|obtained|available|signed|uploaded).{0,50}(?:the\\s+)?final.{0,30}report",
+    "(?:radiology|imaging).{0,35}report.{0,35}(?:received|obtained|available)"
+  ],
+  "emails": 4800,
+  "initial_verifier_label_agreement": 240,
+  "mutation_checks": {
+    "anatomy": true,
+    "authority": true,
+    "claim_id": true,
+    "date": true,
+    "event": true,
+    "modality": true,
+    "order_id": true,
+    "patient_id": true,
+    "side": true,
+    "signed": true,
+    "superseded": true
+  },
+  "obligations": 1200,
+  "open_obligations": 917,
+  "qwen_rerun_performed": false,
+  "regression_checks": {
+    "earlier_cancellation": true,
+    "later_matching_cancellation": true,
+    "newer_completion_after_cancellation": true,
+    "same_day_conflict": true,
+    "unrelated_claim": true,
+    "unrelated_order": true,
+    "unrelated_patient": true,
+    "wrong_patient_completed_decoy": true
+  },
+  "scenario_counts": {
+    "auth_only": 15,
+    "cancelled": 14,
+    "complete": 15,
+    "date_conflict": 16,
+    "dicom_header": 15,
+    "email_claim": 16,
+    "missing_report": 15,
+    "referral_conflict": 15,
+    "revoked": 15,
+    "scheduled_only": 14,
+    "superseded": 15,
+    "unsigned": 16,
+    "wrong_anatomy": 14,
+    "wrong_order": 15,
+    "wrong_patient": 15,
+    "wrong_side": 15
+  },
+  "shuffle_seed": 20261014,
+  "shuffled_imaging_changed": 0,
+  "supported_obligations": 283
+}

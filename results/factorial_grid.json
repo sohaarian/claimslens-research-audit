@@ -1,0 +1,222 @@
+{
+  "audit_date": "2026-10-17",
+  "model_oracle": "developer-written reference rule, NOT independent clinical oracle",
+  "factorial_dimensions": {
+    "patient_id": [
+      "matching",
+      "changed"
+    ],
+    "claim_id": [
+      "matching",
+      "changed"
+    ],
+    "order_id": [
+      "matching",
+      "changed"
+    ],
+    "kind": [
+      "matching",
+      "changed"
+    ],
+    "authority": [
+      "matching",
+      "changed"
+    ],
+    "signed": [
+      "matching",
+      "changed"
+    ],
+    "modality": [
+      "matching",
+      "changed"
+    ],
+    "anatomy": [
+      "matching",
+      "changed"
+    ],
+    "side": [
+      "matching",
+      "changed"
+    ],
+    "superseded": [
+      "matching",
+      "changed"
+    ]
+  },
+  "date_classes": {
+    "earlier_preorder": "2026-01-11",
+    "earlier_valid": "2026-01-19",
+    "same_day": "2026-01-20",
+    "later_valid": "2026-01-21",
+    "future": "2027-01-01",
+    "unparseable": "not-a-date"
+  },
+  "event_classes": [
+    "CANCELLED",
+    "REVOKED",
+    "OTHER"
+  ],
+  "factorial_total": 18432,
+  "oracle_disagreements": 0,
+  "example_disagreements": [],
+  "outcomes_historical_to_current": {
+    "0->1": 3064,
+    "1->1": 15360,
+    "0->0": 8
+  },
+  "matching_cancel_samples": {
+    "CANCELLED_earlier_preorder": {
+      "prior": false,
+      "current": true
+    },
+    "REVOKED_earlier_preorder": {
+      "prior": false,
+      "current": true
+    },
+    "OTHER_earlier_preorder": {
+      "prior": true,
+      "current": true
+    },
+    "CANCELLED_earlier_valid": {
+      "prior": false,
+      "current": true
+    },
+    "REVOKED_earlier_valid": {
+      "prior": false,
+      "current": true
+    },
+    "OTHER_earlier_valid": {
+      "prior": true,
+      "current": true
+    },
+    "CANCELLED_same_day": {
+      "prior": false,
+      "current": false
+    },
+    "REVOKED_same_day": {
+      "prior": false,
+      "current": false
+    },
+    "OTHER_same_day": {
+      "prior": true,
+      "current": true
+    },
+    "CANCELLED_later_valid": {
+      "prior": false,
+      "current": false
+    },
+    "REVOKED_later_valid": {
+      "prior": false,
+      "current": false
+    },
+    "OTHER_later_valid": {
+      "prior": true,
+      "current": true
+    },
+    "CANCELLED_future": {
+      "prior": false,
+      "current": false
+    },
+    "REVOKED_future": {
+      "prior": false,
+      "current": false
+    },
+    "OTHER_future": {
+      "prior": true,
+      "current": true
+    },
+    "CANCELLED_unparseable": {
+      "prior": false,
+      "current": false
+    },
+    "REVOKED_unparseable": {
+      "prior": false,
+      "current": false
+    },
+    "OTHER_unparseable": {
+      "prior": true,
+      "current": true
+    }
+  },
+  "multi_record_patterns": 6,
+  "multi_record_order_permutations": 360,
+  "permutation_disagreements": 0,
+  "source_line_coverage": {
+    "denominator_ast_statement_lines": 53,
+    "generator_executed_statement_lines": 40,
+    "generator_plus_probes_executed_statement_lines": 49,
+    "generator_executed_line_numbers": [
+      182,
+      183,
+      185,
+      187,
+      188,
+      191,
+      192,
+      194,
+      195,
+      196,
+      204,
+      205,
+      208,
+      209,
+      213,
+      214,
+      216,
+      217,
+      221,
+      222,
+      223,
+      224,
+      225,
+      226,
+      227,
+      228,
+      234,
+      235,
+      237,
+      239,
+      240,
+      241,
+      245,
+      248,
+      250,
+      251,
+      255,
+      256,
+      257,
+      260
+    ],
+    "newly_executed_line_numbers": [
+      212,
+      238,
+      243,
+      244,
+      246,
+      247,
+      249,
+      252,
+      253
+    ],
+    "disclaimer": "Source-line coverage within verify(); not MC/DC, branch coverage, clinical validity or test adequacy."
+  },
+  "scenario_counts": {
+    "auth_only": 15,
+    "cancelled": 14,
+    "complete": 15,
+    "date_conflict": 16,
+    "dicom_header": 15,
+    "email_claim": 16,
+    "missing_report": 15,
+    "referral_conflict": 15,
+    "revoked": 15,
+    "scheduled_only": 14,
+    "superseded": 15,
+    "unsigned": 16,
+    "wrong_anatomy": 14,
+    "wrong_order": 15,
+    "wrong_patient": 15,
+    "wrong_side": 15
+  },
+  "counterexamples": "Same-author oracle, designed predicate grid; same-date ordering unresolved; clinical cancellation reinstatement unvalidated."
+}

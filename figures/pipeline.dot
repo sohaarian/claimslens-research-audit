@@ -1,0 +1,4 @@
+digraph G { graph [rankdir=LR, bgcolor="white", pad="0.15", nodesep="0.28", ranksep="0.28"]; node [shape=box, style="rounded,filled", fillcolor="#F0F4F9",color="#294966",fontname="Helvetica",fontsize=11,margin="0.14,0.10"]; edge [color="#45647B",arrowsize=0.65];
+ "Generator\nfictional profiles" -> "Source records\norders / reports /\nnotices / emails" -> "Verifier\nidentity / dates /\nauthority / event" -> "Documentary\noutput + citations" -> "Human review\nNOT evaluated";
+ "Qwen archived\n64-case proposal" -> "Verifier\nidentity / dates /\nauthority / event" [style=dashed];
+ }

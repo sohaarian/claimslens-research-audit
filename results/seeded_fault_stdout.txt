@@ -1,0 +1,32 @@
+{
+  "seeded_mutants": 5,
+  "detected": 5,
+  "mutants": {
+    "M01_remove_all_notices": {
+      "detected_by_failing_test": true,
+      "exit_status": 1,
+      "tail": "nError: assert 'DOCUMENT_FOUND' == 'REVIEW_CONFLICT'\n  \n  - REVIEW_CONFLICT\n  + DOCUMENT_FOUND\nFAILED tests/test_conservative_policy.py::test_notices_even_with_wrong_identity_flagged[SUPERSEDED] - AssertionError: assert 'DOCUMENT_FOUND' == 'REVIEW_CONFLICT'\n  \n  - REVIEW_CONFLICT\n  + DOCUMENT_FOUND\n24 failed, 27 passed in 0.21s\n"
+    },
+    "M02_require_notice_signature": {
+      "detected_by_failing_test": true,
+      "exit_status": 1,
+      "tail": "onError: assert 'DOCUMENT_FOUND' == 'REVIEW_CONFLICT'\n  \n  - REVIEW_CONFLICT\n  + DOCUMENT_FOUND\nFAILED tests/test_conservative_policy.py::test_notices_even_with_wrong_identity_flagged[SUPERSEDED] - AssertionError: assert 'DOCUMENT_FOUND' == 'REVIEW_CONFLICT'\n  \n  - REVIEW_CONFLICT\n  + DOCUMENT_FOUND\n7 failed, 44 passed in 0.15s\n"
+    },
+    "M03_trust_identity_mismatch": {
+      "detected_by_failing_test": true,
+      "exit_status": 1,
+      "tail": "onError: assert 'DOCUMENT_FOUND' == 'REVIEW_CONFLICT'\n  \n  - REVIEW_CONFLICT\n  + DOCUMENT_FOUND\nFAILED tests/test_conservative_policy.py::test_notices_even_with_wrong_identity_flagged[SUPERSEDED] - AssertionError: assert 'DOCUMENT_FOUND' == 'REVIEW_CONFLICT'\n  \n  - REVIEW_CONFLICT\n  + DOCUMENT_FOUND\n7 failed, 44 passed in 0.15s\n"
+    },
+    "M04_ignore_future_notice": {
+      "detected_by_failing_test": true,
+      "exit_status": 1,
+      "tail": "5: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_conservative_policy.py::test_notice_never_auto_affirms[date-2027-01-01] - assert []\nFAILED tests/test_conservative_policy.py::test_notice_never_auto_affirms[date-bad-date] - assert []\n2 failed, 49 passed in 0.14s\n"
+    },
+    "M05_ignore_all_notice_conflicts": {
+      "detected_by_failing_test": true,
+      "exit_status": 1,
+      "tail": "nError: assert 'DOCUMENT_FOUND' == 'REVIEW_CONFLICT'\n  \n  - REVIEW_CONFLICT\n  + DOCUMENT_FOUND\nFAILED tests/test_conservative_policy.py::test_notices_even_with_wrong_identity_flagged[SUPERSEDED] - AssertionError: assert 'DOCUMENT_FOUND' == 'REVIEW_CONFLICT'\n  \n  - REVIEW_CONFLICT\n  + DOCUMENT_FOUND\n21 failed, 30 passed in 0.18s\n"
+    }
+  },
+  "interpretation": "Hand-selected edit detection; not a standard tool mutation score."
+}

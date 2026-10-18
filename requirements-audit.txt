@@ -1,0 +1,2 @@
+# All deterministic audit entry points use Python 3.12+ standard library only.
+# Optional runtime dependencies for the public demonstration are outside this research audit.

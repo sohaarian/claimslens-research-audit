@@ -1,0 +1,185 @@
+{
+  "fixed_as_of": "2026-10-17",
+  "generator_total": 240,
+  "profile_templates": 24,
+  "imaging_scenarios": {
+    "auth_only": 15,
+    "cancelled": 14,
+    "complete": 15,
+    "date_conflict": 16,
+    "dicom_header": 15,
+    "email_claim": 16,
+    "missing_report": 15,
+    "referral_conflict": 15,
+    "revoked": 15,
+    "scheduled_only": 14,
+    "superseded": 15,
+    "unsigned": 16,
+    "wrong_anatomy": 14,
+    "wrong_order": 15,
+    "wrong_patient": 15,
+    "wrong_side": 15
+  },
+  "profile_scenario_cells_observed": 240,
+  "possible_profile_scenario_cells": 384,
+  "scenarios_per_profile": {
+    "10": 24
+  },
+  "profiles_without_complete": [
+    "Lateral ankle sprain",
+    "Tibial plateau fracture",
+    "Calcaneus fracture",
+    "Elbow contusion",
+    "Hip contusion",
+    "Quadriceps tendon injury",
+    "Tarsal crush injury",
+    "Coccygeal injury",
+    "Patellar injury"
+  ],
+  "non_imaging_modulo_composition": {
+    "CONSULT": {
+      "count": 80,
+      "profile_count": 8,
+      "sample_case_indices_0_based": [
+        0,
+        3,
+        6,
+        9,
+        12,
+        15,
+        18,
+        21,
+        24,
+        27
+      ]
+    },
+    "AUTHORIZATION": {
+      "count": 60,
+      "profile_count": 6,
+      "sample_case_indices_0_based": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24,
+        28,
+        32,
+        36
+      ]
+    },
+    "THERAPY": {
+      "count": 48,
+      "profile_count": 24,
+      "sample_case_indices_0_based": [
+        0,
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45
+      ]
+    },
+    "WORK_STATUS": {
+      "count": 80,
+      "profile_count": 8,
+      "sample_case_indices_0_based": [
+        1,
+        4,
+        7,
+        10,
+        13,
+        16,
+        19,
+        22,
+        25,
+        28
+      ]
+    }
+  },
+  "states_by_kind": {
+    "IMAGING": {
+      "DOCUMENT_FOUND": 15,
+      "REVIEW_MISSING": 90,
+      "REVIEW_CONFLICT": 135
+    },
+    "CONSULT": {
+      "DOCUMENT_FOUND": 80,
+      "REVIEW_MISSING": 160
+    },
+    "AUTHORIZATION": {
+      "DOCUMENT_FOUND": 60,
+      "REVIEW_MISSING": 180
+    },
+    "THERAPY": {
+      "DOCUMENT_FOUND": 48,
+      "REVIEW_MISSING": 192
+    },
+    "WORK_STATUS": {
+      "REVIEW_MISSING": 160,
+      "DOCUMENT_FOUND": 80
+    }
+  },
+  "candidate_to_safe": {
+    "IMAGING:1->1": 15,
+    "CONSULT:1->1": 80,
+    "AUTHORIZATION:1->1": 60,
+    "THERAPY:1->1": 48,
+    "WORK_STATUS:0->0": 160,
+    "IMAGING:0->0": 225,
+    "CONSULT:0->0": 160,
+    "AUTHORIZATION:0->0": 180,
+    "THERAPY:0->0": 192,
+    "WORK_STATUS:1->1": 80
+  },
+  "illustrative_policy_probes": {
+    "no_notice": {
+      "state": "DOCUMENT_FOUND",
+      "candidate_rule_eligible": true,
+      "source_warnings": []
+    },
+    "untrusted_notice": {
+      "state": "REVIEW_CONFLICT",
+      "candidate_rule_eligible": true,
+      "source_warnings": [
+        "ADDITIONAL"
+      ]
+    },
+    "cross_patient_notice": {
+      "state": "REVIEW_CONFLICT",
+      "candidate_rule_eligible": true,
+      "source_warnings": [
+        "ADDITIONAL"
+      ]
+    },
+    "matching_prior_notice": {
+      "state": "REVIEW_CONFLICT",
+      "candidate_rule_eligible": true,
+      "source_warnings": [
+        "ADDITIONAL"
+      ]
+    },
+    "entered_in_error_notice": {
+      "state": "REVIEW_CONFLICT",
+      "candidate_rule_eligible": true,
+      "source_warnings": [
+        "ADDITIONAL"
+      ]
+    },
+    "mismatched_modality": {
+      "state": "REVIEW_CONFLICT",
+      "candidate_rule_eligible": true,
+      "source_warnings": [
+        "ADDITIONAL"
+      ]
+    }
+  },
+  "canonical_sha256": "f9fe07e192a64fc08d1cc3ce5923385495a53cf6180c07494e5fa1e7b697fc34",
+  "candidate_sha256": "cd14284919dba346e03b6657a96ff7ce571ddce1bc6c5483e50478f0caf3463b",
+  "warning": "This measures deterministic policy outputs and generator design, not clinical accuracy or beneficial safety impact."
+}

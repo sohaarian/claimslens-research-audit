@@ -1,0 +1,21 @@
+{
+  "scope": "Deterministic source-linked studio summary and structured-source perturbation; no Qwen inference",
+  "seed": 20261014,
+  "counts": {
+    "evaluated_cases": 240,
+    "unique_cited_ids_across_cases": 736,
+    "valid_locator_cases": 240,
+    "proof_set_matches_core": 240,
+    "unique_inspection_ids_across_cases": 721,
+    "unique_proof_ids_across_cases": 15,
+    "accepted_imaging_safe_label": 15,
+    "misleading_wrong_patient_record_invariant_cases": 240,
+    "shuffle_invariant_cases": 240,
+    "irrelevant_email_invariant_cases": 240,
+    "open_imaging_with_inspected_records": 225,
+    "open_imaging_with_nonempty_inspection_ids": 225
+  },
+  "failures": [],
+  "clinical_faithfulness_measured": false,
+  "llm_faithfulness_measured": false
+}
