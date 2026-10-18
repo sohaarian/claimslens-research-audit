@@ -1,0 +1,68 @@
+{
+  "as_of": "2026-10-17",
+  "author_defined_policy_only": true,
+  "clinical_validity": "unknown",
+  "rows": {
+    "no_notice": {
+      "canonical_eligible": true,
+      "experimental_state": "DOCUMENT_FOUND",
+      "reason": []
+    },
+    "prior_matching": {
+      "canonical_eligible": true,
+      "experimental_state": "REVIEW_CONFLICT",
+      "reason": [
+        "CANCEL_OR_REVOKE_ATTACHED_REQUIRES_MANUAL_RECONCILIATION"
+      ]
+    },
+    "later_matching": {
+      "canonical_eligible": false,
+      "experimental_state": "REVIEW_CONFLICT",
+      "reason": [
+        "LATER_AUTHENTICATED_CANCELLATION"
+      ]
+    },
+    "future_matching": {
+      "canonical_eligible": false,
+      "experimental_state": "REVIEW_CONFLICT",
+      "reason": [
+        "SAME_DAY_OR_UNDATED_CANCELLATION_NEEDS_REVIEW"
+      ]
+    },
+    "unsigned_matching": {
+      "canonical_eligible": true,
+      "experimental_state": "REVIEW_CONFLICT",
+      "reason": [
+        "CANCEL_OR_REVOKE_ATTACHED_REQUIRES_MANUAL_RECONCILIATION"
+      ]
+    },
+    "wrong_authority": {
+      "canonical_eligible": true,
+      "experimental_state": "REVIEW_CONFLICT",
+      "reason": [
+        "CANCEL_OR_REVOKE_ATTACHED_REQUIRES_MANUAL_RECONCILIATION"
+      ]
+    },
+    "wrong_patient": {
+      "canonical_eligible": true,
+      "experimental_state": "REVIEW_CONFLICT",
+      "reason": [
+        "CANCEL_OR_REVOKE_ATTACHED_REQUIRES_MANUAL_RECONCILIATION"
+      ]
+    },
+    "wrong_service": {
+      "canonical_eligible": true,
+      "experimental_state": "REVIEW_CONFLICT",
+      "reason": [
+        "CANCEL_OR_REVOKE_ATTACHED_REQUIRES_MANUAL_RECONCILIATION"
+      ]
+    },
+    "revocation": {
+      "canonical_eligible": false,
+      "experimental_state": "REVIEW_CONFLICT",
+      "reason": [
+        "LATER_AUTHENTICATED_CANCELLATION"
+      ]
+    }
+  }
+}

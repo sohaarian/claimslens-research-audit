@@ -1,73 +1,52 @@
-# ClaimsLens Research Audit
+# ClaimsLens: Research evidence-integrity report (17 October 2026)
 
-**Status: source audit package pending — not yet reproducible from this repository.**
+This is a **research artifact**, not a clinical decision-support deployment or a clinical safety certification. All cases are fictional. The hosted demonstration is a separate codebase and has **not** been confirmed to use the research default below.
 
-This repository is intended to accompany *ClaimsLens: Testing Medical-Document Evidence Rules and a Conservative Review Policy* (17 October 2026), an independent software-verification case study using fictional records.
+## Which verifier is which?
 
-The research contrasts (1) a historical cancellation veto, (2) an identity-aware but permissive candidate, and (3) a conservative, human-review-oriented research policy. It studies software predicates and generated records; it does **not** establish clinical accuracy, medical effectiveness, nursing productivity gains, or deployment of the research policy to a hosted demo.
+- `source/claimslens_verifier_historical.py`: archived historical implementation with the broad cancellation veto.
+- `source/claimslens_rule_candidate.py`: identity-aware, chronology-sensitive but **permissive** candidate from the earlier comparison. A later completion can override an earlier cancellation without proof of reinstatement. Retained to reproduce the original 18,432-cell software grid, *not* designated as a clinical policy.
+- `source/claimslens_verifier.py`: **research default**. Requires explicit `as_of` and returns `DOCUMENT_FOUND`, `REVIEW_MISSING`, or `REVIEW_CONFLICT`. An attached cancellation/revocation/status notice causes `REVIEW_CONFLICT` even when identity or authority differs; this may create extra reviews. It is an unvalidated developer decision, not an accepted medical standard.
+- `source/claimslens_final.py` and older demo modules: legacy compatibility code required by historical UI/renderer scripts; not the default research policy, and not evidence of a fixed live deployment.
 
-## Paper
+## Reproduce the software tests
 
-- [`paper/ClaimsLens_Technical_Report.pdf`](paper/ClaimsLens_Technical_Report.pdf) — the uploaded 32-page case study.
-
-## What must be added before publishing this as a reproducible audit
-
-The attached PDF documents, but does not supply, the executable audit files. Add the exact original files (not reconstructed approximations) to these locations:
-
-```text
-source/claimslens_verifier.py
-source/claimslens_rule_candidate.py
-source/claimslens_verifier_historical.py
-source/run_research_audits.py
-source/audit_factorial_grid.py
-source/audit_conservative_policy.py
-source/audit_policy_generator.py
-source/audit_seeded_faults.py
-source/experimental_triage.py
-source/check_field_mutations.py
-source/check_all_obligations.py
-source/check_cancellation_behavior.py
-source/check_renderer_sources.py
-source/benchmark_extraction_scaffold.py
-tests/test_conservative_policy.py
-requirements-research.txt
-results/audit_summary.json
-results/factorial_grid.json
-results/experimental_triage.json
-results/policy_generator_results.json
-results/seeded_fault_detection.json
-results/policy_branch_coverage.json
-SHA256SUMS.txt
-```
-
-These paths reproduce the research report's **Technical Appendix A** inventory. Supplementary application modules needed by the original audits may also be required and must be carried over from the actual archived audit package.
-
-## Commands described by the report
-
-Run these only **after** populating and verifying the research package, installing dependencies in a fresh environment, and checking that referenced files are present.
+Python 3.12 or 3.13 recommended. The research wrapper uses only the standard library; `pytest` and `coverage` are pinned in `requirements-research.txt` for the tests. **No Ollama instance is required** for these audits.
 
 ```bash
 python -m pip install -r requirements-research.txt
 python source/run_research_audits.py
 python source/audit_policy_generator.py
 python source/audit_seeded_faults.py
-python -m pytest -q tests/
-python -m coverage run --branch --source=claimslens_verifier -m pytest -q tests/
+python -m coverage run --branch --source=claimslens_verifier -m pytest -q tests/test_conservative_policy.py
 python -m coverage report -m
-sha256sum source/claimslens_verifier.py
 ```
 
-The reported results are historical findings from an archived controlled run; none of the commands above has been run on the starter repository.
+Expected from the executed Oct 17 research set:
+- Historic/candidate rule enumeration: 18,432 developer-defined combinations, 3,064 ineligible-to-eligible transitions, no eligible-to-ineligible transitions, 360 multi-record permutations without Boolean change.
+- Generated set: 240 cases, five tracking items each; 283 documentary states programmed positive in the candidate and research default, 917 other states. Research default splits non-document states into 782 missing and 135 conflict.
+- Generator: 24 profiles, 16 scenario names, only 240 of 384 potential profile/scenario combinations exercised; nine profiles never appear in a complete imaging example.
+- Default module: 51 passing pytest parameterized cases across 12 test functions; 90% combined line/branch coverage (not the whole application); five **hand-selected** seeded source faults detected.
 
-## Evidence and risk boundaries
+## Model-extraction research is not complete
 
-- The study used 240 fictional cases, 1,200 tracked items, and a constructed 18,432-cell cancellation predicate grid.
-- The developer-authored policy suite reported 51 passing parameterized cases across 12 test functions, 90% combined line/branch coverage of the small conservative policy module, and detection of five deliberately seeded faults.
-- These are software-testing results, not independently adjudicated clinical outcomes.
-- The archived research verifier is **not** assumed to be installed in the hosted public app.
+`source/benchmark_extraction_scaffold.py` only checks two supplied JSONL files. This release does not contain independently reviewed medical report labels, model prompts, an Ollama rerun, field-level extraction metrics, nurse usability studies or a clinically approved cancellation/reinstatement policy. Do not rephrase the synthetic tests as medical accuracy.
 
-Related demonstration source: [claimslens-public-demo](https://github.com/sohaarian/claimslens-public-demo). Keep the public demonstration and controlled research package distinct.
+## Public link and reproducibility
 
-## Before changing visibility to public
+The public demonstration repository is https://github.com/sohaarian/claimslens-public-demo . It is not a published, tagged research audit release and must not be cited as containing the three research-policy modules above until they are actually uploaded and verified. No DOI has been assigned. SHA-256 values in `SHA256SUMS.txt` identify the exact local research package.
 
-Verify exact file contents and SHA-256 checksums; ensure all required scripts run in a clean environment; add accurate dependencies, a dataset/source-provenance statement, and a license decision. Do not commit secrets, private claims files, credentials, or employer records. Do not claim external reproduction until an independent party actually reproduces the run.
+## Limits and assistance
+
+ChatGPT assisted with manuscript drafting and code/test development; user-supplied critical reviews attributed to Claude informed editorial priorities but provided no independent clinical adjudication. Funding and financial interests beyond what appears in the artifact were not independently established. Clinical and organizational requirements, patient security, and regulations must be assessed by relevant professionals before any live use.
+
+## Verified page-layout corrections
+This edition keeps the original research code and numerical findings unchanged. It improves typeset listings, the Section 4.4/Table 3 flow, and Figure 3. The figure's PDF is a vector drawing and can be regenerated with `python figures/render_conservative_policy.py` (requires ReportLab and DejaVuSans installed locally). This diagram-generation dependency is separate from the pinned research test requirements.
+
+`QUALITY_CHECKS.md` records source checks, tested extracted PDF strings, and rendered-page inspection. The final PDF is 32 pages. The bibliography begins immediately after the conclusion, and the closing research-integrity and funding statements fit on page 32. The two-column layout and substantive report content are preserved. This report is not a clinical validation.
+
+## Final five-issue PDF check
+See `QUALITY_CHECKS.md` and `qa_evidence/` for proof of the exact five requested text and layout cases. Code and numerical findings are unchanged from the prior 32-page release.
+
+## Five-point preflight
+`QUALITY_CHECKS.md` records source, MuPDF, Poppler and rendered-page checks for five repeatedly misreported artifacts.

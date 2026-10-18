@@ -1,0 +1,13 @@
+digraph G {
+ rankdir=LR; graph [bgcolor="white",pad=.20,nodesep=.37,ranksep=.48,fontname="DejaVu Sans"];
+ node [shape=box,style="rounded,filled",fillcolor="#EFF3F8",color="#536C86",fontname="DejaVu Sans",fontsize=11,margin="0.11,0.09"];
+ edge [color="#4B647E",fontname="DejaVu Sans",fontsize=10];
+ input [label="Structured source\n+ tracking item + as_of"];
+ candidate [label="Candidate verifier\nidentity, signature, date"];
+ notice [shape=diamond,fillcolor="#FDF3E9",label="Linked status notice\nor malformed record?",fontsize=12];
+ qualifying [shape=diamond,label="Qualifying signed\ncompletion found?",fontsize=10];
+ conflict [fillcolor="#F7E2E2",label="REVIEW_CONFLICT\nshow sources + blockers"];
+ found [fillcolor="#E6F2EA",label="DOCUMENT_FOUND\nnot clinical acknowledgment"];
+ missing [fillcolor="#F6F0DF",label="REVIEW_MISSING\nrequest missing source"];
+ input->candidate;candidate->notice;notice->conflict [label="Yes"];notice->qualifying [label="No notice"];qualifying->found [label="Yes"];qualifying->missing [label="No evidence",minlen=2];
+}

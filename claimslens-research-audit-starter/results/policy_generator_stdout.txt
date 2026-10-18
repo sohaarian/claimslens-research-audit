@@ -1,0 +1,97 @@
+{
+  "generator_total": 240,
+  "profile_templates": 24,
+  "profile_scenario_cells_observed": 240,
+  "possible_profile_scenario_cells": 384,
+  "scenarios_per_profile": {
+    "10": 24
+  },
+  "profiles_without_complete": [
+    "Lateral ankle sprain",
+    "Tibial plateau fracture",
+    "Calcaneus fracture",
+    "Elbow contusion",
+    "Hip contusion",
+    "Quadriceps tendon injury",
+    "Tarsal crush injury",
+    "Coccygeal injury",
+    "Patellar injury"
+  ],
+  "states_by_kind": {
+    "IMAGING": {
+      "DOCUMENT_FOUND": 15,
+      "REVIEW_MISSING": 90,
+      "REVIEW_CONFLICT": 135
+    },
+    "CONSULT": {
+      "DOCUMENT_FOUND": 80,
+      "REVIEW_MISSING": 160
+    },
+    "AUTHORIZATION": {
+      "DOCUMENT_FOUND": 60,
+      "REVIEW_MISSING": 180
+    },
+    "THERAPY": {
+      "DOCUMENT_FOUND": 48,
+      "REVIEW_MISSING": 192
+    },
+    "WORK_STATUS": {
+      "REVIEW_MISSING": 160,
+      "DOCUMENT_FOUND": 80
+    }
+  },
+  "candidate_to_safe": {
+    "IMAGING:1->1": 15,
+    "CONSULT:1->1": 80,
+    "AUTHORIZATION:1->1": 60,
+    "THERAPY:1->1": 48,
+    "WORK_STATUS:0->0": 160,
+    "IMAGING:0->0": 225,
+    "CONSULT:0->0": 160,
+    "AUTHORIZATION:0->0": 180,
+    "THERAPY:0->0": 192,
+    "WORK_STATUS:1->1": 80
+  },
+  "illustrative_policy_probes": {
+    "no_notice": {
+      "state": "DOCUMENT_FOUND",
+      "candidate_rule_eligible": true,
+      "source_warnings": []
+    },
+    "untrusted_notice": {
+      "state": "REVIEW_CONFLICT",
+      "candidate_rule_eligible": true,
+      "source_warnings": [
+        "ADDITIONAL"
+      ]
+    },
+    "cross_patient_notice": {
+      "state": "REVIEW_CONFLICT",
+      "candidate_rule_eligible": true,
+      "source_warnings": [
+        "ADDITIONAL"
+      ]
+    },
+    "matching_prior_notice": {
+      "state": "REVIEW_CONFLICT",
+      "candidate_rule_eligible": true,
+      "source_warnings": [
+        "ADDITIONAL"
+      ]
+    },
+    "entered_in_error_notice": {
+      "state": "REVIEW_CONFLICT",
+      "candidate_rule_eligible": true,
+      "source_warnings": [
+        "ADDITIONAL"
+      ]
+    },
+    "mismatched_modality": {
+      "state": "REVIEW_CONFLICT",
+      "candidate_rule_eligible": true,
+      "source_warnings": [
+        "ADDITIONAL"
+      ]
+    }
+  }
+}

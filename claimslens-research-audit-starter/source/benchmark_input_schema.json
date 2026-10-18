@@ -1,0 +1,13 @@
+{
+  "labels_jsonl_example_NOT_REAL_DATA": {
+    "id": "CASE-ID",
+    "text": "Verbatim report text supplied by a lawful source",
+    "fields": {"patient_id": "", "order_id": "", "modality": "", "anatomy": "", "laterality": "", "report_date": "", "report_status": "", "signed": false}
+  },
+  "predictions_jsonl_example_NOT_REAL_DATA": {
+    "id": "CASE-ID",
+    "fields": {"patient_id": "", "order_id": "", "modality": "", "anatomy": "", "laterality": "", "report_date": "", "report_status": "", "signed": false},
+    "spans": {"patient_id": "verbatim substring from input", "order_id": "", "modality": "", "anatomy": "", "laterality": "", "report_date": "", "report_status": ""}
+  },
+  "notes": "Schema only; no patient records or independent labels shipped. Field accuracy is not evidence of clinical validity without proper data collection and a separate review process."
+}

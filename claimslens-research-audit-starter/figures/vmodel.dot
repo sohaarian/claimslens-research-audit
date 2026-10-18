@@ -1,0 +1,4 @@
+digraph G {graph [rankdir=LR, bgcolor="white", nodesep="0.3",ranksep="0.32",pad="0.15"];node [shape=box, style="rounded,filled",color="#41617D",fillcolor="#EDF2F7",fontname="Helvetica",fontsize=10,margin="0.12,0.07"];edge[color="#41617D",arrowsize=0.7];
+ "User need\nNOT elicited"->"Requirements\ndeveloper authored"->"Design\nrule and schema"->"Implementation\nPython verifier"->"Verification\nexecuted grid"->"Integration\nnot end-to-end"->"Validation\nNOT performed";
+ "Risk / hazard review\nillustrative only" [fillcolor="#FCE8DC"];"Risk / hazard review\nillustrative only"->"Requirements\ndeveloper authored" [style=dashed];"Risk / hazard review\nillustrative only"->"Verification\nexecuted grid" [style=dashed];
+}

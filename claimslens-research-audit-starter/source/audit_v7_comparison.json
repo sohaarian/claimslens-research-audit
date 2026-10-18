@@ -1,0 +1,78 @@
+{
+  "as_of": "2026-10-17",
+  "exemplar_case": "CL-0001",
+  "unit": "single constructed imaging case with one added cancellation record",
+  "cases": {
+    "baseline_complete": {
+      "historical": true,
+      "corrected": true,
+      "corrected_blockers": []
+    },
+    "unrelated_patient_cancellation": {
+      "historical": false,
+      "corrected": true,
+      "corrected_blockers": []
+    },
+    "unrelated_claim_cancellation": {
+      "historical": false,
+      "corrected": true,
+      "corrected_blockers": []
+    },
+    "unrelated_order_cancellation": {
+      "historical": false,
+      "corrected": true,
+      "corrected_blockers": []
+    },
+    "earlier_matching_cancellation": {
+      "historical": false,
+      "corrected": true,
+      "corrected_blockers": []
+    },
+    "later_matching_cancellation": {
+      "historical": false,
+      "corrected": false,
+      "corrected_blockers": [
+        "LATER_AUTHENTICATED_CANCELLATION"
+      ]
+    },
+    "same_day_matching_cancellation": {
+      "historical": false,
+      "corrected": false,
+      "corrected_blockers": [
+        "SAME_DAY_OR_UNDATED_CANCELLATION_NEEDS_REVIEW"
+      ]
+    },
+    "future_matching_cancellation": {
+      "historical": false,
+      "corrected": false,
+      "corrected_blockers": [
+        "SAME_DAY_OR_UNDATED_CANCELLATION_NEEDS_REVIEW"
+      ]
+    },
+    "unparseable_matching_cancellation": {
+      "historical": false,
+      "corrected": false,
+      "corrected_blockers": [
+        "SAME_DAY_OR_UNDATED_CANCELLATION_NEEDS_REVIEW"
+      ]
+    },
+    "unsigned_matching_cancellation": {
+      "historical": true,
+      "corrected": true,
+      "corrected_blockers": []
+    },
+    "wrong_authority_cancellation": {
+      "historical": true,
+      "corrected": true,
+      "corrected_blockers": []
+    },
+    "future_cancellation_requires_review": {
+      "historical": false,
+      "corrected": false,
+      "corrected_blockers": [
+        "SAME_DAY_OR_UNDATED_CANCELLATION_NEEDS_REVIEW"
+      ]
+    }
+  },
+  "note": "The comparison checks program behavior; the expected outcome is developer-defined, and a clinician did not adjudicate it."
+}

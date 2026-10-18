@@ -1,0 +1,4 @@
+digraph G {graph[rankdir=TB,bgcolor="white",nodesep="0.25",ranksep="0.27",pad="0.15"];node[shape=box,style="rounded,filled",fillcolor="#EEF3F7",color="#31516B",fontname="Helvetica",fontsize=10];edge[color="#345875",arrowsize=0.65,fontsize=9,fontname="Helvetica"];
+ A[label="Qualifying signed final\nrecord?",shape=diamond];B[label="REVIEW: missing/invalid"];C[label="Linked cancel/revoke\nfrom correct authority?"];D[label="Check all identities,\nmodality and chronology"];E[label="Document found\n(no matching blocker)"];F[label="REVIEW: matched\nlater/same/future/invalid date"];
+ A->B[label="No"];A->C[label="Yes"];C->E[label="No"];C->D[label="Yes"];D->E[label="mismatch / earlier"];D->F[label="later/ambiguous"];
+}
