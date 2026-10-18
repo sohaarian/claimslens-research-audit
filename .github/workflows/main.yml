@@ -1,0 +1,42 @@
+
+name: ClaimsLens Research Verification
+
+on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.12', '3.13']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements-research.txt
+
+      - name: Check Python source
+        run: python -m compileall -q source tests
+
+      - name: Reproduce research audits
+        run: python source/run_research_audits.py
+
+      - name: Verify generator
+        run: python source/audit_policy_generator.py
+
+      - name: Test seeded faults
+        run: python source/audit_seeded_faults.py
+
+      - name: Run tests with coverage
+        run: python -m coverage run --branch --source=claimslens_verifier -m pytest -q tests/test_conservative_policy.py
+
+      - name: Report coverage
+        run: python -m coverage report -m
